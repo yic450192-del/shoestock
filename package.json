@@ -1,0 +1,38 @@
+{
+  "name": "shoestock",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "离线优先的鞋子库存管理器 - 管理分类/数量/码数，支持语音修改",
+  "scripts": {
+    "postinstall": "node scripts/copy-wasm.mjs",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "type-check": "vue-tsc --noEmit",
+    "test": "vitest run",
+    "sync": "vite build && cap sync",
+    "android": "vite build && cap sync android && cap open android"
+  },
+  "dependencies": {
+    "@capacitor-community/sqlite": "^8.1.1",
+    "@capacitor/android": "^8.5.2",
+    "@capacitor/core": "^8.5.2",
+    "@capacitor/filesystem": "^8.1.3",
+    "@capgo/capacitor-speech-recognition": "^8.3.2",
+    "jeep-sqlite": "^2.8.0",
+    "pinia": "^4.0.3",
+    "sql.js": "^1.14.2",
+    "vant": "^4.10.2",
+    "vue": "^3.5.43"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^8.5.2",
+    "@types/node": "^22.10.0",
+    "@vitejs/plugin-vue": "^6.0.9",
+    "typescript": "^5.9.3",
+    "vite": "^8.3.0",
+    "vitest": "^3.2.7",
+    "vue-tsc": "^3.3.11"
+  }
+}

@@ -1,0 +1,168 @@
+:root {
+  --ss-bg: #f7f8fa;
+  --ss-warn: #ee0a24;
+  --ss-ok: #07c160;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--ss-bg);
+  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'PingFang SC',
+    'Microsoft YaHei', sans-serif;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* 顶部留出刘海/状态栏空间 */
+.ss-page {
+  padding: env(safe-area-inset-top) 0 calc(60px + env(safe-area-inset-bottom));
+}
+
+.ss-card {
+  margin: 12px;
+  padding: 12px 14px;
+  background: #fff;
+  border-radius: 12px;
+}
+
+.ss-muted {
+  color: #969799;
+  font-size: 12px;
+}
+
+.ss-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+/* 尺码格子矩阵 */
+.ss-matrix {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.ss-cell {
+  border: 1px solid #ebedf0;
+  border-radius: 8px;
+  padding: 8px 4px;
+  text-align: center;
+  background: #fff;
+}
+
+.ss-cell--low {
+  border-color: var(--ss-warn);
+  background: #fff1f0;
+}
+
+.ss-size {
+  font-size: 12px;
+  color: #646566;
+}
+
+.ss-stock {
+  font-size: 18px;
+  font-weight: 500;
+  margin: 2px 0;
+}
+
+.ss-stock--low {
+  color: var(--ss-warn);
+}
+
+.ss-preview {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.ss-chip {
+  font-size: 12px;
+  padding: 2px 6px;
+  border-radius: 4px;
+  background: #f2f3f5;
+  color: #646566;
+}
+
+.ss-chip--zero {
+  background: #fff1f0;
+  color: var(--ss-warn);
+}
+
+/* 语音页：麦克风按钮 */
+.ss-mic-wrap {
+  display: flex;
+  justify-content: center;
+  padding: 8px 0;
+}
+
+.ss-mic {
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  border: none;
+  background: var(--ss-ok);
+  color: #fff;
+  font-size: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(7, 193, 96, 0.3);
+}
+
+.ss-mic:active {
+  transform: scale(0.94);
+}
+
+/* 正在收音 */
+.ss-mic--on {
+  background: var(--ss-warn);
+  box-shadow: 0 4px 12px rgba(238, 10, 36, 0.35);
+  animation: ss-pulse 1.2s ease-in-out infinite;
+}
+
+/* 设备不支持时置灰，但依然可点 —— 点了会给出原因 */
+.ss-mic--off {
+  background: #c8c9cc;
+  box-shadow: none;
+}
+
+@keyframes ss-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.06);
+  }
+}
+
+/* 实时识别结果 */
+.ss-partial {
+  margin-top: 12px;
+  padding: 10px 12px;
+  background: #f2f3f5;
+  border-radius: 8px;
+  font-size: 15px;
+  min-height: 44px;
+  color: #323233;
+}
+
+/* 示例指令，点击填入 */
+.ss-example {
+  cursor: pointer;
+  border: 1px solid #ebedf0;
+}
+
+.ss-candidate {
+  margin: 0 0 8px;
+}

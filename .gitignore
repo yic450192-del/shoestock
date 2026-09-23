@@ -1,0 +1,29 @@
+node_modules/
+dist/
+.DS_Store
+*.local
+
+# WorkBuddy 的工作区数据（会话、记忆），不属于项目源码
+.workbuddy/
+
+# 由 npm postinstall 从 sql.js 复制而来，不需要进仓库
+public/assets/sql-wasm.wasm
+
+# Capacitor 生成的原生工程（首次 add 后生成）
+android/
+ios/
+
+# 语音识别凭证，绝对不要提交
+.env
+.env.local
+.env.production
+
+# 编辑器和系统
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
